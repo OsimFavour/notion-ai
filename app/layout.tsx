@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header";
+import Sidebar from "@/components/sidebar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +21,12 @@ export default function RootLayout({
         <div className="flex min-h-screen">
 
           {/* Sidebar */}
-          {children}
+          <Sidebar />
+
+          <div className="flex-1 p-4 bg-gray-100 overflow-y-auto scrollbar-hide">
+            {children}
+          </div>
+          
         </div>
       </body>
     </html>
